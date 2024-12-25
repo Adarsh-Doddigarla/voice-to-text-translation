@@ -1,27 +1,96 @@
-# voice-to-text-translation
-Application that translates speech into text and audio in different languages.
+Voice-to-Text Translation Application
 
-# Voice Translation and Speech Synthesis
+This project is a Python-based application that captures voice input, recognizes the spoken text, detects its language, translates it into a target language, and generates an audio file in the translated language.
 
-This project is a Python-based voice translation and speech synthesis application that recognizes speech in multiple languages, translates it to a user-specified target language, and then generates an audio file of the translated text. The project uses the following libraries:
+Features
 
-- `speech_recognition`: For capturing and recognizing speech from the microphone.
-- `googletrans`: For translating recognized text to the desired language.
-- `gTTS`: For converting the translated text into speech.
+Captures voice input using the microphone.
 
-## Features
+Recognizes spoken text using Google Speech Recognition.
 
-- Speech input is captured from the microphone.
-- The recognized text is translated into a target language (e.g., Hindi, Telugu, Tamil, etc.).
-- The translated text is converted into audio and saved as an MP3 file.
-- Supports multiple languages including Hindi, Telugu, Tamil, Kannada, Malayalam, and Bengali.
+Detects the language of the recognized text.
 
-## Installation
+Translates the recognized text into a user-specified target language.
 
-To set up and run the project, follow these steps:
+Converts the translated text into an audio file using Google Text-to-Speech (gTTS).
 
-### 1. Clone the repository
+Prerequisites
 
-```bash
-git clone https://github.com/your-username/voice-translation.git
-cd voice-translation
+Ensure you have the following installed:
+
+Python 3.7 or higher
+
+Required Python libraries (install via pip):
+
+speech_recognition
+
+googletrans==4.0.0-rc1
+
+gtts
+
+Installation
+
+Clone this repository:
+
+Install the required libraries:
+
+pip install -r requirements.txt
+
+Ensure your microphone is working and accessible.
+
+Usage
+
+Run the script:
+
+python app.py
+
+When prompted, enter the target language (e.g., Hindi, Telugu, Tamil).
+
+Speak into the microphone when instructed. The application will:
+
+Recognize your speech.
+
+Detect the language of the recognized text.
+
+Translate the text into the specified target language.
+
+Save the translated audio to an outputs folder.
+
+The translated audio will automatically play if your system supports the playback command.
+
+Supported Languages
+
+The application currently supports translation to the following languages:
+
+Hindi (hi)
+
+Telugu (te)
+
+Kannada (kn)
+
+Tamil (ta)
+
+Malayalam (ml)
+
+Bengali (bn)
+
+File Structure
+
+voice-to-text-translation/
+|-- app.py              # Main application script
+|-- requirements.txt    # Required libraries
+|-- outputs/            # Directory where translated audio files are saved
+
+Requirements File
+
+Create a requirements.txt file with the following content:
+
+speech_recognition
+googletrans==4.0.0-rc1
+gtts
+
+Notes
+
+The googletrans library may experience occasional issues with translations. If translation fails, check your network connection or try again later.
+
+Ensure that the outputs directory exists or will be created during the script execution.
